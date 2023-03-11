@@ -6,8 +6,8 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :story_mapper, StoryMapper.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "password",
   hostname: "localhost",
   database: "story_mapper_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,

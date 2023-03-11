@@ -9,3 +9,13 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+StoryMapper.Repo.insert_all(
+  "projects",[[title: "First project", inserted_at: DateTime.utc_now(), updated_at: DateTime.utc_now()]]
+)
+
+project = StoryMapper.Projects.get_project!(1)
+
+StoryMapper.Repo.insert_all(
+  "stories",[[title: "My First User Story", project_id: project.id, inserted_at: DateTime.utc_now(), updated_at: DateTime.utc_now()]]
+)
